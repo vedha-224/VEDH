@@ -1,0 +1,16 @@
+# CREATING QR CODE WITHOUT ANY CONSTRAINTS
+import qrcode as qr
+img=qr.make("https://www.youtube.com/results?search_query=how+to+download+e+pan+card+online+without+knowing+email")
+img.save("pan_card_qr.png")
+
+# CREATING QR CODE WITHOUT ANY CONSTRAINTS
+import qrcode
+import qrcode.constants 
+qr=qrcode.QRCode(version=1,
+                 error_correction=qrcode.constants.ERROR_CORRECT_H,
+                 box_size=10,
+                 border=4)
+qr.add_data("https://search.yahoo.com/search?fr=mcafee&type=E210US885G0&p=resume")
+qr.make(fit=True)
+image=qr.make_image(fill_color='red',back_color='blue')
+image.save('vedh_res.png')
