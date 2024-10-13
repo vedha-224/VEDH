@@ -6,6 +6,9 @@ pos2=0
 def move(pos):
     dice=random.randint(1,6)
     print(f"dice={dice}")
+    if pos+dice >100:
+        print('player will be at same position')
+        return pos
     pos=pos+dice
     if pos in snakes:
         print('Bitten By Snake')
@@ -21,12 +24,14 @@ def move(pos):
     return pos
 while True:
     A=input('Player 1 enter \'A\' to throw dice:')
-    pos1=move(pos1)
-    if(pos1==100):
-        print('Game Over !!! \n player 1 is winner')
-        break
+    if A.upper()=='A':
+     pos1=move(pos1)
+     if(pos1==100):
+         print('Game Over !!! \n player 1 is winner')
+         break
     B=input('Player 2 enter \'B\' to throw dice:')
-    pos2=move(pos2)
-    if(pos2==100):
-        print('Game Over !!! \n player 2 is winner')
-        break
+    if B.upper()=='B':
+     pos2=move(pos2)
+     if(pos2==100):
+         print('Game Over !!! \n player 2 is winner')
+         break
